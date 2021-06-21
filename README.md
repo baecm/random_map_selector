@@ -1,9 +1,5 @@
 # random_map_selector
-Just random map selector from map pool for IEEE CoG StarCraft AI competition
-
-> __Requirements__
-> - pyyaml
-
+Random map selector from map pool for IEEE CoG StarCraft AI competition
 
 __Usage__
 ~~~
