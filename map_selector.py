@@ -6,12 +6,14 @@ from functools import reduce
 
 def main():
     parser = ArgumentParser()
-    parser.add_argument('--seeds', nargs="+", type=int)
+    parser.add_argument('--seeds', nargs="+", type=int, required=True)
     parser.add_argument('--num', type=int, default=5)
     parser.add_argument('--ratio', type=list, default=[0.2, 0.4, 0.4])
     parser.add_argument('--pool', default='pool.yaml')
-    parser.add_argument('--version', default='default')
+    parser.add_argument('--version', default='default', help='Map pool version, such as \'cog2021\' (default: default)')
     args = parser.parse_args()
+
+    assert sum(args.ratio) == 1.0
 
     with open(args.pool, 'r') as f:
         pool = yaml.load(f, Loader=yaml.FullLoader)
