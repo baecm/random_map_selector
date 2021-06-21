@@ -1,5 +1,6 @@
-import itertools
 import random
+from argparse import ArgumentParser
+from functools import reduce
 
 mapPool = {
     'maps2': [
@@ -29,24 +30,23 @@ mapPool = {
         "(4)Python1.3"
     ]
 }
+def main():
+    parser = ArgumentParser()
+    parser.add_argument('--seeds', nargs="+", type=int)
+    args = parser.parse_args()
 
-# SEED = 1337
-SEED =  seed1 ^
-        seed2 ^
-        seed3 ^
-        seed4 ^
-        seed5 ^
-        ...
-        seedN
+    xor_seed = reduce(lambda x, y: x ^ y, args.seeds)
+    random.seed(xor_seed)
 
-mapSet = set()
-random.seed(SEED)
+    chosen_map_set = set()
+    while len(chosen_map_set) < 1:
+        chosen_map_set.add(mapPool['maps2'][random.randint(0, len(mapPool['maps2'])) % len(mapPool['maps2'])])
+    while len(chosen_map_set) < 3:
+        chosen_map_set.add(mapPool['maps3'][random.randint(0, len(mapPool['maps3'])) % len(mapPool['maps3'])])
+    while len(chosen_map_set) < 5:
+        chosen_map_set.add(mapPool['maps4'][random.randint(0, len(mapPool['maps4'])) % len(mapPool['maps4'])])
 
-while len(mapSet) < 1:
-    mapSet.add(mapPool['maps2'][random.randint(0, len(mapPool['maps2'])) % len(mapPool['maps2'])])
-while len(mapSet) < 3:
-    mapSet.add(mapPool['maps3'][random.randint(0, len(mapPool['maps3'])) % len(mapPool['maps3'])])
-while len(mapSet) < 5:
-    mapSet.add(mapPool['maps4'][random.randint(0, len(mapPool['maps4'])) % len(mapPool['maps4'])])
+    print(sorted(chosen_map_set))
 
-print(sorted(mapSet))
+if __name__ == '__main__':
+    main()
