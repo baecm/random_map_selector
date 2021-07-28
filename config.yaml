@@ -1,11 +1,34 @@
 default: &default
   num: 5
   ratio: [ 0.2, 0.4, 0.4 ]
-  pool: 'map_pool.yaml'
   seeds:
     example_seed_1: 12345
     example_seed_2: 23456
     example_seed_3: 34567
+  pool:
+    maps2p:
+      - (2)BlueStorm1.2
+      - (2)Destination1.1
+      - (2)Hitchhiker1.1
+      - (2)MatchPoint1.3
+      - (2)NeoChupungRyeong2.1
+      - (2)NeoHeartbreakerRidge
+      - (2)RideofValkyries1.0
+    maps3p:
+      - (3)Alchemist1.0
+      - (3)GreatBarrierReef1.0
+      - (3)NeoAztec2.1
+      - (3)Pathfinder1.0
+      # - (3)Plasma1.0
+      - (3)TauCross1.1
+    maps4p:
+      - (4)Andromeda1.0
+      - (4)ArcadiaII2.02
+      - (4)CircuitBreakers1.0
+      - (4)FightingSpirit1.3
+      - (4)LunaTheFinal2.3
+      - (4)NeoSniperRidge2.0
+      - (4)Python1.3
 
 cog2021:
   <<: *default
