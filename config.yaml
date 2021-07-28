@@ -1,6 +1,6 @@
 default: &default
   num: 5
-  ratio: [0.2, 0.4, 0.4]
+  ratio: [ 0.2, 0.4, 0.4 ]
   pool: 'map_pool.yaml'
   seeds:
     - 12345
@@ -16,6 +16,3 @@ cog2021:
     - 37 # BananaBrain
     - 777 # Granite
     - 7777 # Microwave
-
-
-
