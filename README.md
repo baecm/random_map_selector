@@ -6,18 +6,24 @@ __Usage__
 $ selector.py [--version VERSION]
 ~~~
 __Example__
+
+___default___
 ~~~
 $ selector.py --version default
-version:  default
 ============== Seed Numbers ==============
- 1. example_1       :                12345
- 2. example_2       :                23456
- 3. example_3       :                34567
+ 1. example_seed_1  :                12345
+ 2. example_seed_2  :                23456
+ 3. example_seed_3  :                34567
 ==========================================
 xor_result(random seed) >>           60574
 
 Selected Maps >> ['(2)MatchPoint1.3', '(3)Alchemist1.0', '(3)TauCross1.1', '(4)Andromeda1.0', '(4)FightingSpirit1.3']
+
+
+Selected Maps >> ['(2)MatchPoint1.3', '(3)Alchemist1.0', '(3)TauCross1.1', '(4)Andromeda1.0', '(4)FightingSpirit1.3']
 ~~~
+
+___CoG 2021___ 
 ~~~
 $ selector.py --version cog2021
 version:  cog2021

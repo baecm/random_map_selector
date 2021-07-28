@@ -3,9 +3,9 @@ default: &default
   ratio: [ 0.2, 0.4, 0.4 ]
   pool: 'map_pool.yaml'
   seeds:
-    example_1: 12345
-    example_2: 23456
-    example_3: 34567
+    example_seed_1: 12345
+    example_seed_2: 23456
+    example_seed_3: 34567
 
 cog2021:
   <<: *default
