@@ -9,6 +9,8 @@ def main():
     parser.add_argument('--version', default='default', help='Map pool version, such as \'cog2021\' (default: default)')
     args = parser.parse_args()
 
+    print('version: ', args.version)
+
     with open('config.yaml', 'r') as f:
         config = yaml.load(f, Loader=yaml.FullLoader)
 
@@ -18,7 +20,13 @@ def main():
     with open(config['pool'], 'r') as f:
         pool = yaml.load(f, Loader=yaml.FullLoader)
 
-    xor_seed = reduce(lambda x, y: x ^ y, config['seeds'])
+    print('============== Seed Numbers ==============')
+    for i, (k, v) in enumerate(config['seeds'].items()):
+        print('{:>2}. {:<16}: {:>20}'.format(i+1, k, v))
+    print('==========================================')
+
+    xor_seed = reduce(lambda x, y: x ^ y, list(config['seeds'].values()))
+    print('xor_result(random seed) >> {:>15}'.format(xor_seed))
     random.seed(xor_seed)
 
     maps2p = random.sample(pool[args.version]['maps2p'], k=int(config['num'] * config['ratio'][0]))
@@ -28,7 +36,7 @@ def main():
     chosen_map_set = set(maps2p + maps3p + maps4p)
 
     assert len(chosen_map_set) == config['num']
-    print(sorted(chosen_map_set))
+    print('\nSelected Maps >> {}'.format(sorted(chosen_map_set)))
 
 
 if __name__ == '__main__':
