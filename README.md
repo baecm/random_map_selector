@@ -4,6 +4,8 @@ Random map selector from map pool for IEEE CoG StarCraft AI competition
 __Usage__
 ~~~
 $ selector.py [--version VERSION]
+
+--version: Load configuration set from config.yaml (default: default)
 ~~~
 __Example__
 
