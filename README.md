@@ -39,6 +39,6 @@ version:  cog2021
 ==========================================
 xor_result(random seed) >>      4534130719
 
-Selected Maps >> ['(2)RideofValkyries1.', '(3)GreatBarrierReef1.0', '(3)NeoAztec2.1', '(4)NeoSniperRidge2.0', '(4)Python1.3']
+Selected Maps >> ['(2)RideofValkyries1.0', '(3)GreatBarrierReef1.0', '(3)NeoAztec2.1', '(4)NeoSniperRidge2.0', '(4)Python1.3']
 ~~~
 
